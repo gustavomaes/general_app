@@ -66,7 +66,7 @@ class _GameScreenState extends State<GameScreen> {
     return GestureDetector(
       onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
       child: Scaffold(
-        backgroundColor: const Color.fromARGB(255, 255, 133, 119),
+        backgroundColor: currentPlayer.color,
         body: SafeArea(
           child: SingleChildScrollView(
             child: Padding(
@@ -96,21 +96,24 @@ class _GameScreenState extends State<GameScreen> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           const SizedBox(height: 16),
-                          ListView(
-                            shrinkWrap: true,
-                            children: [
-                              for (final player in _players)
-                                PlayerButton(
-                                  color: player.color,
-                                  isPlaying: currentPlayer.id == player.id,
-                                  playerName: player.name,
-                                  onTap: () {
-                                    setState(() {
-                                      currentPlayer = player;
-                                    });
-                                  },
-                                ),
-                            ],
+                          SizedBox(
+                            width: 200,
+                            child: ListView(
+                              shrinkWrap: true,
+                              children: [
+                                for (final player in _players)
+                                  PlayerButton(
+                                    color: player.color,
+                                    isPlaying: currentPlayer.id == player.id,
+                                    playerName: player.name,
+                                    onTap: () {
+                                      setState(() {
+                                        currentPlayer = player;
+                                      });
+                                    },
+                                  ),
+                              ],
+                            ),
                           ),
                         ],
                       ),
