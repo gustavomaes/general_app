@@ -46,6 +46,9 @@ class _GameScreenState extends State<GameScreen> {
         itemBuilder: (BuildContext context, int index) {
           return ListTile(
             title: Text(_list[index]),
+            onTap: () {
+              print('tap value');
+            },
           );
         },
       ),
@@ -122,11 +125,11 @@ class _GameScreenState extends State<GameScreen> {
                           const SizedBox(height: 16),
                           DiceRow(
                             svgPath: 'assets/d1.png',
-                            openScoreDialog: () => print('print1'),
+                            openScoreDialog: openDialogList,
                           ),
                           DiceRow(
                             svgPath: 'assets/d2.png',
-                            openScoreDialog: () => openDialogList,
+                            openScoreDialog: openDialogList,
                           ),
                           DiceRow(
                             svgPath: 'assets/d3.png',
