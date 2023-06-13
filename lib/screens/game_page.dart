@@ -4,11 +4,11 @@ import 'package:flutter_svg/flutter_svg.dart';
 import '../widgets/dice_row.dart';
 import '../widgets/player_button.dart';
 
-class GameScreen extends StatefulWidget {
-  const GameScreen({super.key});
+class GamePage extends StatefulWidget {
+  const GamePage({super.key});
 
   @override
-  State<GameScreen> createState() => _GameScreenState();
+  State<GamePage> createState() => _GamePageState();
 }
 
 class Player {
@@ -32,7 +32,7 @@ List<Player> _players = [
   Player(id: "5", name: 'Player 5', color: Color.fromARGB(255, 255, 199, 0)),
 ];
 
-class _GameScreenState extends State<GameScreen> {
+class _GamePageState extends State<GamePage> {
   final Widget logo = SvgPicture.asset('assets/logo.svg', height: 60);
   Player currentPlayer = _players[0];
 
