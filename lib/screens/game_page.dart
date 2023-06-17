@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:general/models/player_model.dart';
 
 import '../widgets/dice_row.dart';
 import '../widgets/player_button.dart';
@@ -9,18 +10,6 @@ class GamePage extends StatefulWidget {
 
   @override
   State<GamePage> createState() => _GamePageState();
-}
-
-class Player {
-  String id;
-  String name;
-  Color color;
-
-  Player({
-    required this.id,
-    required this.name,
-    required this.color,
-  });
 }
 
 const List<String> _list = ['1', '2', '3', '4', '5'];
